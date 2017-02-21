@@ -16,7 +16,7 @@ public class ResponseParser {
     private Gson gson;
     public ResponseParser() {
         gson = new GsonBuilder().registerTypeAdapter(RateObject.class, new RatesDeserializer()).
-                setDateFormat("yyyy-mm-dd").create();
+                setDateFormat("yyyy-MM-dd").create();
     }
 
     private class RatesDeserializer implements JsonDeserializer<RateObject> {

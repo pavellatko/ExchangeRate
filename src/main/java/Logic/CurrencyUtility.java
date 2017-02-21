@@ -10,7 +10,7 @@ public class CurrencyUtility{
             Arrays.asList("USD", "JPY", "BGN", "CZK", "DKK", "GBP", "HUF", "PLN", "RON",
                     "SEK", "CHF", "NOK", "HRK", "RUB", "TRY", "AUD", "BRL", "CAD", "CNY",
                     "HKD", "IDR", "INR", "KRW", "MXN", "MYR", "NZD", "PHP", "SGD", "THB",
-                    "ZAR", "ILS"));
+                    "ZAR", "ILS", "EUR"));
     public static boolean isSupported(String currency) {
         return supportedCurrencies.contains(normalize(currency));
     }

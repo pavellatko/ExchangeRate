@@ -18,8 +18,6 @@ public class ExchangeJSONFetcher {
         this.toCurrency = toCurrency;
     }
 
-
-
     private String formatApiUrl() {
         return String.format(apiUrl, fromCurrency, toCurrency);
     }
@@ -43,7 +41,8 @@ public class ExchangeJSONFetcher {
         URL url = new URL(formatApiUrl());
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setReadTimeout(10000);
+        connection.setReadTimeout(5000);
+        connection.setConnectTimeout(5000);
         connection.connect();
         reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String response = readFromBufferedReader(reader);
